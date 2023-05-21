@@ -4,29 +4,43 @@
     <input type="number" id="input1"> <!--Feet to Inches (Feet Input)-->
     <input type="number" id="input2"> <!--Inches to Feet (Inches Input)-->
     <input type="number" id="input3"> <!--Feet to Yards (Feet Input)-->
+    <input type="number" id="input4"> <!--Yards to Feet (Yards Input)-->
+    <input type="number" id="input5"> <!--Liters to Milliliters (Liters Input)-->
     <button onclick="feetToInches()" class="ftoi">Convert (Feet to Inches)</button>
     <button onclick="inchesToFeet()" class="itof">Convert (Inches to Feet)</button>
     <button onclick="feetToYards()" class="ftoy">Convert (Feet to Yards)</button>
+    <button onclick="yardsToFeet()" class="ytof">Convert (Yards to Feet)</button>
+    <button onclick="LitoMili()" class="mtoml">Convert (Liters to Milliliters)</button>
   </body>
   <script>
     function feetToInches(){
       let FtoI = document.getElementById("input1").value
       let ans1 = FtoI * 12
-      alert(ans1)
+      alert(ans1 + " Inches!")
     }
     function inchesToFeet(){
       let ItoF = document.getElementById("input2").value 
       let ans2 = ItoF / 12
-      alert(ans2)
+      alert(ans2 + " Feet!")
     }
     function feetToYards(){
       let FtoY = document.getElementById("input3").value
       let ans3 = FtoY / 3
-      alert(ans3)
+      alert(ans3 + " Yards!")
+    }
+    function yardsToFeet(){
+      let YtoF = document.getElementById("input4").value
+      let ans4 = YtoF * 3
+      alert(ans4 + " Feet!")
+    }
+    function LitoMili(){
+      let LtoMl = document.getElementById("input5").value
+      let ans5 = LtoMl * 1000
+      alert(ans5 + " Milliliters!")
     }
   </script>
   <style>
-    /* props to ChatGPT for CSS code */
+    /* props to ChatGPT for some of the CSS code */
     #input1{
       background-color: lightpink;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.18);
@@ -43,6 +57,20 @@
     }
     #input3{
       background-color: yellow;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.18);
+      border: 2px solid #333333;
+      padding: 10px;
+      color: #333333;
+    }
+    #input4{
+      background-color: cyan;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.18);
+      border: 2px solid #333333;
+      padding: 10px;
+      color: #333333;
+    }
+    #input5{
+      background-color: greenyellow;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.18);
       border: 2px solid #333333;
       padding: 10px;
@@ -81,5 +109,28 @@
     .ftoy:hover{
       transform: scale(1.1);
     }
+    .ytof{
+      background-color: cyan;
+      padding: 10px 20px;
+      border: 2px solid #333333;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease-in-out;
+      cursor: pointer;
+    }
+    .ytof:hover{
+      transform: scale(1.1);
+    }
+    .mtoml{
+      background-color: greenyellow;
+      padding: 10px 20px;
+      border: 2px solid #333333;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease-in-out;
+      cursor: pointer;
+    }
+    .mtoml:hover{
+      transform: scale(1.1);
+    }
+
   </style>
 </html>
