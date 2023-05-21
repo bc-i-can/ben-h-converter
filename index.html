@@ -1,5 +1,85 @@
+<!DOCTYPE html>
 <html>
   <body>
-    <h1>Some Change Here</h1>
+    <input type="number" id="input1"> <!--Feet to Inches (Feet Input)-->
+    <input type="number" id="input2"> <!--Inches to Feet (Inches Input)-->
+    <input type="number" id="input3"> <!--Feet to Yards (Feet Input)-->
+    <button onclick="feetToInches()" class="ftoi">Convert (Feet to Inches)</button>
+    <button onclick="inchesToFeet()" class="itof">Convert (Inches to Feet)</button>
+    <button onclick="feetToYards()" class="ftoy">Convert (Feet to Yards)</button>
   </body>
+  <script>
+    function feetToInches(){
+      let FtoI = document.getElementById("input1").value
+      let ans1 = FtoI * 12
+      alert(ans1)
+    }
+    function inchesToFeet(){
+      let ItoF = document.getElementById("input2").value 
+      let ans2 = ItoF / 12
+      alert(ans2)
+    }
+    function feetToYards(){
+      let FtoY = document.getElementById("input3").value
+      let ans3 = FtoY / 3
+      alert(ans3)
+    }
+  </script>
+  <style>
+    /* props to ChatGPT for CSS code */
+    #input1{
+      background-color: lightpink;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.18);
+      border: 2px solid #333333;
+      padding: 10px;
+      color: #333333;
+    }
+    #input2{
+      background-color: red;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.18);
+      border: 2px solid #333333;
+      padding: 10px;
+      color: #333333;
+    }
+    #input3{
+      background-color: yellow;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.18);
+      border: 2px solid #333333;
+      padding: 10px;
+      color: #333333;
+    }
+    .ftoi{
+      background-color: lightpink;
+      padding: 10px 20px;
+      border: 2px solid #333333;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease-in-out;
+      cursor: pointer;
+    }
+    .ftoi:hover{
+      transform: scale(1.1);
+    }
+    .itof{
+      background-color: red;
+      padding: 10px 20px;
+      border: 2px solid #333333;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease-in-out;
+      cursor: pointer;
+    }
+    .itof:hover{
+      transform: scale(1.1);
+    }
+    .ftoy{
+      background-color: yellow;
+      padding: 10px 20px;
+      border: 2px solid #333333;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease-in-out;
+      cursor: pointer;
+    }
+    .ftoy:hover{
+      transform: scale(1.1);
+    }
+  </style>
 </html>
