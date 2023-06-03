@@ -1,18 +1,30 @@
 <!DOCTYPE html>
 <html>
   <body>
-    <input type="number" id="input1"> <!--Feet to Inches (Feet Input)-->
-    <input type="number" id="input2"> <!--Inches to Feet (Inches Input)-->
-    <input type="number" id="input3"> <!--Feet to Yards (Feet Input)-->
-    <input type="number" id="input4"> <!--Yards to Feet (Yards Input)-->
-    <input type="number" id="input5"> <!--Liters to Milliliters (Liters Input)-->
-    <input type="number" id="input6"> <!--Millimeters to Liters (Milliliters Input)-->
-    <button onclick="feetToInches()" class="ftoi">Convert (Feet to Inches)</button>
-    <button onclick="inchesToFeet()" class="itof">Convert (Inches to Feet)</button>
-    <button onclick="feetToYards()" class="ftoy">Convert (Feet to Yards)</button>
-    <button onclick="yardsToFeet()" class="ytof">Convert (Yards to Feet)</button>
-    <button onclick="LitoMili()" class="mtoml">Convert (Liters to Milliliters)</button>
-    <button onclick="MilitoLi()" class="ltoml">Convert (Milliliters to Liters)</button>
+    <div class="ftoi">
+      <input type="number" id="input1"> <!--Feet to Inches (Feet Input)-->
+      <button onclick="feetToInches()">Convert (Feet to Inches)</button>
+    </div>
+    <div class="itof">
+      <input type="number" id="input2"> <!--Inches to Feet (Inches Input)-->
+      <button onclick="inchesToFeet()">Convert (Inches to Feet)</button>
+    </div>
+    <div class="ftoy">
+      <input type="number" id="input3"> <!--Feet to Yards (Feet Input)-->
+      <button onclick="feetToYards()">Convert (Feet to Yards)</button>
+    </div>
+    <div class="ytof">
+      <input type="number" id="input4"> <!--Yards to Feet (Yards Input)-->
+      <button onclick="yardsToFeet()">Convert (Yards to Feet)</button>
+    </div>
+    <div class="mtoml">
+      <input type="number" id="input5"> <!--Liters to Milliliters (Liters Input)-->
+      <button onclick="LitoMili()">Convert (Liters to Milliliters)</button>
+    </div>
+    <div class="ltoml">
+      <input type="number" id="input6"> <!--Millimeters to Liters (Milliliters Input)-->
+      <button onclick="MilitoLi()">Convert (Milliliters to Liters)</button>
+    </div>
   </body>
   <script>
     function feetToInches(){
@@ -48,117 +60,53 @@
   </script>
   <style>
     /* props to ChatGPT for some of the CSS code */
-    body{
-      background-color: black;
+    body {
+      background: rgb(215,0,0);
+      background: linear-gradient(90deg, rgba(215,0,0,1) 0%, rgba(0,208,12,1) 35%, rgba(0,212,255,1) 100%);
+      margin-left: 2em;
     }
-    #input1{
+    div {
+      clear: left;
+      float: left;
+    }
+    div:hover {
+      transform: scale(1.1);
+    }
+    div > * {
+      border: 2px solid #333333;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease-in-out;
+      width: 250px;
+      height: 30px;
+    }
+    div > input {
+      text-align: right;
+    }
+    div > input::-webkit-outer-spin-button, div > input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    div > button {
+      cursor: pointer;
+      width: 200px;
+    }
+    .ftoi > * {
       background-color: lightpink;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.18);
-      border: 2px solid #333333;
-      padding: 10px;
-      color: #333333;
     }
-    #input2{
+    .itof > * {
       background-color: red;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.18);
-      border: 2px solid #333333;
-      padding: 10px;
-      color: #333333;
     }
-    #input3{
+    .ftoy > * {
       background-color: yellow;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.18);
-      border: 2px solid #333333;
-      padding: 10px;
-      color: #333333;
     }
-    #input4{
+    .ytof > * {
       background-color: cyan;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.18);
-      border: 2px solid #333333;
-      padding: 10px;
-      color: #333333;
     }
-    #input5{
+    .mtoml > * {
       background-color: greenyellow;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.18);
-      border: 2px solid #333333;
-      padding: 10px;
-      color: #333333;
     }
-    #input6{
+    .ltoml > * {
       background-color: blueviolet;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.18);
-      border: 2px solid #333333;
-      padding: 10px;
-      color: #333333;
     }
-    .ftoi{
-      background-color: lightpink;
-      padding: 10px 20px;
-      border: 2px solid #333333;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      transition: transform 0.2s ease-in-out;
-      cursor: pointer;
-    }
-    .ftoi:hover{
-      transform: scale(1.1);
-    }
-    .itof{
-      background-color: red;
-      padding: 10px 20px;
-      border: 2px solid #333333;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      transition: transform 0.2s ease-in-out;
-      cursor: pointer;
-    }
-    .itof:hover{
-      transform: scale(1.1);
-    }
-    .ftoy{
-      background-color: yellow;
-      padding: 10px 20px;
-      border: 2px solid #333333;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      transition: transform 0.2s ease-in-out;
-      cursor: pointer;
-    }
-    .ftoy:hover{
-      transform: scale(1.1);
-    }
-    .ytof{
-      background-color: cyan;
-      padding: 10px 20px;
-      border: 2px solid #333333;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      transition: transform 0.2s ease-in-out;
-      cursor: pointer;
-    }
-    .ytof:hover{
-      transform: scale(1.1);
-    }
-    .mtoml{
-      background-color: greenyellow;
-      padding: 10px 20px;
-      border: 2px solid #333333;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      transition: transform 0.2s ease-in-out;
-      cursor: pointer;
-    }
-    .mtoml:hover{
-      transform: scale(1.1);
-    }
-    .ltoml{
-      background-color: blueviolet;
-      padding: 10px 20px;
-      border: 2px solid #333333;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      transition: transform 0.2s ease-in-out;
-      cursor: pointer;
-    }
-    .ltoml:hover{
-      transform: scale(1.1);
-    }
-
   </style>
 </html>
