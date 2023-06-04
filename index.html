@@ -3,63 +3,100 @@
   <body>
     <div class="ftoi">
       <input type="number" id="input1"> <!--Feet to Inches (Feet Input)-->
-      <button onclick="feetToInches()">Convert (Feet to Inches)</button>
+      <button onclick="feetToInches()" id="button1">Convert (Feet to Inches)</button>
     </div>
     <div class="itof">
       <input type="number" id="input2"> <!--Inches to Feet (Inches Input)-->
-      <button onclick="inchesToFeet()">Convert (Inches to Feet)</button>
+      <button onclick="inchesToFeet()" id="button2">Convert (Inches to Feet)</button>
     </div>
     <div class="ftoy">
       <input type="number" id="input3"> <!--Feet to Yards (Feet Input)-->
-      <button onclick="feetToYards()">Convert (Feet to Yards)</button>
+      <button onclick="feetToYards()" id="button3">Convert (Feet to Yards)</button>
     </div>
     <div class="ytof">
       <input type="number" id="input4"> <!--Yards to Feet (Yards Input)-->
-      <button onclick="yardsToFeet()">Convert (Yards to Feet)</button>
+      <button onclick="yardsToFeet()" id="button4">Convert (Yards to Feet)</button>
     </div>
     <div class="mtoml">
       <input type="number" id="input5"> <!--Liters to Milliliters (Liters Input)-->
-      <button onclick="LitoMili()">Convert (Liters to Milliliters)</button>
+      <button onclick="LitoMili()" id="button5">Convert (Liters to Milliliters)</button>
     </div>
     <div class="ltoml">
       <input type="number" id="input6"> <!--Millimeters to Liters (Milliliters Input)-->
-      <button onclick="MilitoLi()">Convert (Milliliters to Liters)</button>
+      <button onclick="MilitoLi()" id="button6">Convert (Milliliters to Liters)</button>
     </div>
   </body>
   <script>
+  // So if you are smart enough to look at this code somehow, if you put a blank value, it says 0. Hoping to patch this in a future update.
     function feetToInches(){
       let FtoI = document.getElementById("input1").value
+      if (FtoI === undefined){
+        nullcase()
+      }
+      else{
       let ans1 = FtoI * 12
       alert(ans1 + " Inches!")
+      }
     }
     function inchesToFeet(){
       let ItoF = document.getElementById("input2").value 
+      if (ItoF === undefined){
+        nullcase()
+      }
+      if (ItoF === "12"){
+        alert("1 Foot!");
+      }
+      else{
       let ans2 = ItoF / 12
       alert(ans2 + " Feet!")
+      }
     }
     function feetToYards(){
       let FtoY = document.getElementById("input3").value
+      if (FtoY === undefined){
+        nullcase()
+      }
+      if (FtoY === "3"){
+        alert("1 Yard!")
+      }
+      else{
       let ans3 = FtoY / 3
       alert(ans3 + " Yards!")
+      }
     }
     function yardsToFeet(){
       let YtoF = document.getElementById("input4").value
+      if (YtoF === undefined){
+        nullcase()
+      }
+      else{
       let ans4 = YtoF * 3
       alert(ans4 + " Feet!")
+      }
     }
     function LitoMili(){
       let LtoMl = document.getElementById("input5").value
+      if (FtoI === undefined){
+        nullcase()
+      }
+      else{
       let ans5 = LtoMl * 1000
       alert(ans5 + " Milliliters!")
+      }
     }
     function MilitoLi(){
       let MltoL = document.getElementById("input6").value
+      if (FtoI === undefined){
+        nullcase()
+      }
+      else{
       let ans6 = MltoL / 1000
       alert(ans6 + " Liters!")
+      }
     }
   </script>
   <style>
-    /* props to ChatGPT for some of the CSS code */
+    /* props to ChatGPT for a tiny bit of the CSS code */
     body {
       background: rgb(215,0,0);
       background: linear-gradient(90deg, rgba(215,0,0,1) 0%, rgba(0,208,12,1) 35%, rgba(0,212,255,1) 100%);
